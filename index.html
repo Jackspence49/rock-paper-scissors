@@ -6,38 +6,41 @@
 </head>
 <body>
   <script>
+    //Declare variables for Computer and Human Choice
+    let computerChoice
+    let humanChoice 
+
+
     // Create a function to get the computer choice
     function getComputerChoice(){ 
     switch(Math.floor(Math.random()*3)+1){ //Statement to get random Int
-      case 1:             // Switch Statement to give options
-        return 'Rock';
+      case 1:             // Switch Statement to get Computer Choice
+        computerChoice = 'Rock';
       case 2:
-        return 'Paper';
+        computerChoice = 'Paper';
       case 3: 
-        return 'Scissor';
+        computerChoice = 'Scissors';
     }
     }
 
     //Create the Function to get computer choice
     function getHumanChoice(){
     let answer = prompt ("Playing Rock Paper, Scissors...| 1 = Rock | 2 = Paper | 3 = Scissors|") //Human Choices their Option
-    if (answer == 1) {    //If statements to put answer to results
-      return 'Rock';  
-    }
+    if (answer == 1) {    //If statements to get Human Choice
+      humanChoice = 'Rock';
+    };
     if (answer == 2) {
-      return 'Paper';
-    }
+      humanChoice = 'Paper';
+    };
     if (answer == 3) {
-      return 'Scissors'
-    }
+      humanChoice = 'Scissors'
+    };
     }
 
-    //Declare the players score variable
-    const humanScore = 0
-    const computerScore = 0
-    
     console.log (getComputerChoice())
     console.log (getHumanChoice())
+    console.log (computerChoice)
+    console.log (humanChoice)
   </script>
 </body>
 </html>
