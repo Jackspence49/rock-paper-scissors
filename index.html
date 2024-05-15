@@ -10,35 +10,85 @@
     let computerChoice
     let humanChoice 
 
+    //Declare the players SCore
+    let humanScore = 0
+    let computerScore = 0
+
 
     // Create a function to get the computer choice
     function getComputerChoice(){ 
-    switch(Math.floor(Math.random()*3)+1){ //Statement to get random Int
-      case 1:             // Switch Statement to get Computer Choice
-        computerChoice = 'Rock';
-      case 2:
-        computerChoice = 'Paper';
-      case 3: 
-        computerChoice = 'Scissors';
+    let computerAnswer = Math.floor(Math.random()*3)//Statement to get random Int
+    if (computerAnswer == 0) {
+      computerChoice = 'Rock';
+    };
+    if (computerAnswer == 1) {
+      computerChoice = 'Paper';
+    };
+    if (computerAnswer == 2) {
+      computerChoice = 'Scissors';
     }
     }
 
     //Create the Function to get computer choice
     function getHumanChoice(){
-    let answer = prompt ("Playing Rock Paper, Scissors...| 1 = Rock | 2 = Paper | 3 = Scissors|") //Human Choices their Option
-    if (answer == 1) {    //If statements to get Human Choice
+    let playerAnswer = prompt ("Playing Rock Paper, Scissors...| 1 = Rock | 2 = Paper | 3 = Scissors|") //Human Choices their Option
+    if (playerAnswer == 1) {    //If statements to get Human Choice
       humanChoice = 'Rock';
     };
-    if (answer == 2) {
+    if (playerAnswer == 2) {
       humanChoice = 'Paper';
     };
-    if (answer == 3) {
+    if (playerAnswer == 3) {
       humanChoice = 'Scissors'
     };
     }
 
-    console.log (getComputerChoice())
-    console.log (getHumanChoice())
+    //Logic to play a single round
+    function playRound () {
+      getComputerChoice()
+      getHumanChoice()
+      if (humanChoice == 'Rock') {
+        if (computerChoice == 'Rock') {
+          return ("You Tied");
+        }
+       if (computerChoice == 'Paper') {
+          return ("You lose");
+          computerScore++
+        }
+          if (computerChoice == 'Scissors'){
+          return ("You Win")
+          humanScore++
+        }
+     }
+     if (humanChoice == 'Paper') {
+        if (computerChoice == 'Paper') {
+          return ("You Tied");
+        }
+       if (computerChoice == 'Scissors') {
+          return ("You lose");
+          computerScore++
+        }
+          if (computerChoice == 'Rock'){
+          return ("You Win")
+          humanScore++
+        }
+     }
+     if (humanChoice == 'Scissors') {
+        if (computerChoice == 'Scissors') {
+          return ("You Tied");
+        }
+       if (computerChoice == 'Rock') {
+          return ("You lose");
+          computerScore++
+        }
+          if (computerChoice == 'Paper'){
+          return ("You Win")
+          humanScore++
+        }
+     }
+    }
+
+    console.log (playRound())
     console.log (computerChoice)
     console.log (humanChoice)
   </script>
