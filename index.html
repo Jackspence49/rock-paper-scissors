@@ -8,16 +8,32 @@
   <script>
     // Create a function to get the computer choice
     function getComputerChoice(){ 
-    switch(Math.floor(Math.random()*3)){ //Switch Statement to Get random Number
-      case 0:
+    switch(Math.floor(Math.random()*3)+1){ //Statement to get random Int
+      case 1:             // Switch Statement to give options
         return 'Rock';
-      case 1:
+      case 2:
         return 'Paper';
-      case 2: 
+      case 3: 
         return 'Scissor';
     }
     }
+
+    //Create the Function to get computer choice
+    function getHumanChoice(){
+    let answer = prompt ("Playing Rock Paper, Scissors...| 1 = Rock | 2 = Paper | 3 = Scissors|") //Human Choices their Option
+    if (answer == 1) {    //If statements to put answer to results
+      return 'Rock';  
+    }
+    if (answer == 2) {
+      return 'Paper';
+    }
+    if (answer == 3) {
+      return 'Scissors'
+    }
+    }
+    
     console.log (getComputerChoice())
+    console.log (getHumanChoice())
   </script>
 </body>
 </html>
