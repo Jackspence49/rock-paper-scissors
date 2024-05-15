@@ -52,12 +52,12 @@
           return ("You Tied");
         }
        if (computerChoice == 'Paper') {
-          return ("You lose");
-          computerScore++
+        computerScore ++ ;
+        return ("You lose");
         }
-          if (computerChoice == 'Scissors'){
+        if (computerChoice == 'Scissors'){
+          humanScore ++
           return ("You Win")
-          humanScore++
         }
      }
      if (humanChoice == 'Paper') {
@@ -65,12 +65,12 @@
           return ("You Tied");
         }
        if (computerChoice == 'Scissors') {
-          return ("You lose");
-          computerScore++
+        computerScore ++ ;
+        return ("You lose");
         }
-          if (computerChoice == 'Rock'){
+        if (computerChoice == 'Rock'){
+          humanScore ++
           return ("You Win")
-          humanScore++
         }
      }
      if (humanChoice == 'Scissors') {
@@ -78,19 +78,16 @@
           return ("You Tied");
         }
        if (computerChoice == 'Rock') {
+          computerScore ++ ;
           return ("You lose");
-          computerScore++
         }
-          if (computerChoice == 'Paper'){
-          return ("You Win")
-          humanScore++
+        if (computerChoice == 'Paper'){
+          humanScore ++;
+          return ("You Win");
         }
      }
     }
-
-    console.log (playRound())
-    console.log (computerChoice)
-    console.log (humanChoice)
+    console.log(playRound())
   </script>
 </body>
 </html>
